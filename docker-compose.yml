@@ -12,6 +12,7 @@ services:
       - ./sql:/sql
       - ./data:/data
       - ./scripts:/scripts
+      - ./results:/results
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres -d library"]
       interval: 5s

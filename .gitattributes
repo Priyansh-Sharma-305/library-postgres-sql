@@ -1,0 +1,5 @@
+text=auto eol=lf
+.sql text eol=lf
+.md text eol=lf
+data/raw/.csv text eol=lf
+results/.csv -text

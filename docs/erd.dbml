@@ -1,0 +1,39 @@
+Table author {
+  au_id int [pk]
+  au_fname varchar
+  au_lname varchar
+  au_birthyear int
+}
+
+Table patron {
+  pat_id int [pk]
+  pat_fname varchar
+  pat_lname varchar
+  pat_type varchar
+}
+
+Table book {
+  book_num int [pk]
+  book_title varchar
+  book_year int
+  book_cost numeric
+  book_subject varchar
+  pat_id int [ref: > patron.pat_id]
+}
+
+Table checkout {
+  check_num int [pk]
+  book_num int [ref: > book.book_num]
+  pat_id int [ref: > patron.pat_id]
+  check_out_date date
+  check_due_date date
+  check_in_date date
+}
+
+Table writes {
+  book_num int [ref: > book.book_num]
+  au_id int [ref: > author.au_id]
+  Indexes {
+    (book_num, au_id) [pk]
+  }
+}
