@@ -1,0 +1,19 @@
+services:
+  db:
+    image: postgres:16
+    container_name: library_pg
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: library
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./sql:/sql
+      - ./data:/data
+      - ./scripts:/scripts
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d library"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
