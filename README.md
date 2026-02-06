@@ -106,9 +106,6 @@ Export example “report” outputs
 
 Run: docker compose exec db psql -U postgres -d library -f /scripts/export\_results.sql
 
-Note: By default this script may export to /data. Recommended improvement is to mount ./results to /results and export there (see “Recommended improvements”).
-
-
 
 Data import notes (Access → CSV)
 
