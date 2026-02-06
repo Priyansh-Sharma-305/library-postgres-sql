@@ -161,27 +161,6 @@ All queries live in sql/queries/ and are named by problem number. Highlights:
 107\_book\_vs\_subject\_avg\_cost.sql — compares each book to subject average
 
 
-
-Recommended improvements (do these if you want this repo to look professional)
-
-
-
-Loader robustness: use COPY ... NULL '' for tables with blank integer fields (author/book).
-
-
-
-Results hygiene: mount ./results:/results in docker-compose and export report CSVs into /results.
-
-
-
-Add .gitattributes to normalize line endings and prevent CRLF/LF churn.
-
-
-
-Keep derived outputs optional: consider ignoring results/\*.csv and regenerate them via export script.
-
-
-
 License
 
 MIT License (see LICENSE file).
